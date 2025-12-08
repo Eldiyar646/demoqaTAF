@@ -4,7 +4,7 @@ import demoqa.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Test_On_Radio_Button_Page extends BaseTest {
+public class Radio_Button_Test extends BaseTest {
 
     @Test
     public void yes_Radio_Button_Page_Test() throws InterruptedException {

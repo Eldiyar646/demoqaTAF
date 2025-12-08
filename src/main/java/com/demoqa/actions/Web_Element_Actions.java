@@ -3,6 +3,7 @@ package com.demoqa.actions;
 import com.demoqa.drivers.Driver_Manager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -27,6 +28,24 @@ public class Web_Element_Actions {
         wait_Element_ToBe_Displayed(element).wait_Element_ToBe_Clickable(element);
         scroll_To_Element(element);
         element.click();
+        return this;
+    }
+
+    public Web_Element_Actions double_Click (WebElement element) {
+        wait_Element_ToBe_Displayed(element).wait_Element_ToBe_Clickable(element);
+        scroll_To_Element(element);
+
+        Actions selenium_actions = new Actions(Driver_Manager.getDriver());
+        selenium_actions.doubleClick(element).perform();
+        return this;
+    }
+
+    public Web_Element_Actions right_Click (WebElement element) {
+        wait_Element_ToBe_Displayed(element).wait_Element_ToBe_Clickable(element);
+        scroll_To_Element(element);
+
+        Actions action = new Actions(Driver_Manager.getDriver());
+        action.contextClick(element).perform();
         return this;
     }
 

@@ -4,7 +4,7 @@ import demoqa.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Test_On_Text_Box_Page extends BaseTest {
+public class Text_Box_Test extends BaseTest {
 
     @Test
     public void text_Box_Page_Test(){

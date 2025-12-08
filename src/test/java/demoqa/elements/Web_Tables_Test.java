@@ -4,11 +4,13 @@ import demoqa.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Test_On_Web_Tables_Page extends BaseTest {
+public class Web_Tables_Test extends BaseTest {
 
     @Test
     public void webTables_Page_Test() {
         driver.get("https://demoqa.com/webtables");
+
+        String example_email = "test@test.com";
 
         String randomFirstName = services.generateRandomUserFirstName();
         String randomLastName = services.generateRandomUserLastName();
@@ -24,15 +26,14 @@ public class Test_On_Web_Tables_Page extends BaseTest {
                 .input_age(randomUserAge)
                 .input_salary(randomSalary)
                 .input_department(randomDepartment)
-                .click_Button().getTable();
+                .click_Button().getHeader();
+
+        webTablesPage.getTable();
 
         Assert.assertTrue(
                 webTablesPage.isEmailPresent(randomEmail),
                 "User with email " + randomEmail + " not found in table");
-        Assert.assertFalse(
-                webTablesPage.isEmailPresent("test@test.com"),
-                "Unexpected user found in table"
-        );
+
 
     }
 

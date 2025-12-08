@@ -4,7 +4,7 @@ import demoqa.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class Test_On_Check_Box_Page extends BaseTest {
+public class Check_Box_Test extends BaseTest {
 
     @Test
     public void check_Box_Page_Test() throws InterruptedException {
