@@ -3,6 +3,7 @@ package demoqa;
 import com.demoqa.data.MockData_Services;
 import com.demoqa.drivers.Driver_Manager;
 import com.demoqa.pages.elements.Check_Box_Page;
+import com.demoqa.pages.elements.Radio_Button_Page;
 import com.demoqa.pages.elements.Text_Box_Page;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
@@ -14,6 +15,8 @@ public class BaseTest {
     public MockData_Services services;
     public Text_Box_Page textBoxPage;
     public Check_Box_Page checkBoxPage;
+    public Radio_Button_Page radioButtonPage;
+
 
 
 
@@ -23,6 +26,7 @@ public class BaseTest {
         services = new MockData_Services();
         textBoxPage = new Text_Box_Page();
         checkBoxPage = new Check_Box_Page();
+        radioButtonPage = new Radio_Button_Page();
 
     }
 
