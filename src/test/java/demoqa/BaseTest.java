@@ -16,8 +16,7 @@ public class BaseTest {
     public Radio_Button_Page radioButtonPage;
     public Web_Tables_Page webTablesPage;
     public Buttons_Page buttonsPage;
-
-
+    public Links_Page linksPage;
 
 
     @BeforeClass(alwaysRun = true)
@@ -29,7 +28,7 @@ public class BaseTest {
         radioButtonPage = new Radio_Button_Page();
         webTablesPage = new Web_Tables_Page();
         buttonsPage = new Buttons_Page();
-
+        linksPage = new Links_Page();
     }
 
     @AfterClass(alwaysRun = true)

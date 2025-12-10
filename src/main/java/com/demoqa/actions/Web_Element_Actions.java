@@ -2,6 +2,7 @@ package com.demoqa.actions;
 
 import com.demoqa.drivers.Driver_Manager;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,6 +12,9 @@ import java.time.Duration;
 
 
 public class Web_Element_Actions {
+
+    public Web_Element_Actions(WebDriver driver, WebDriverWait wait) {
+    }
 
     public Web_Element_Actions wait_Element_ToBe_Displayed (WebElement element){
         new WebDriverWait(Driver_Manager.getDriver(),

@@ -2,6 +2,10 @@ package com.demoqa.drivers;
 
 import com.demoqa.config.FileReader;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
+
 
 //Шаблон проектирования Singleton, одиночка т.е. у этого класса
 // будет только один экземпляр (объект) на весь проект
@@ -11,6 +15,7 @@ public class Driver_Manager {
     }
 
     private static WebDriver driver;
+    private static WebDriverWait wait;
 
     public static WebDriver getDriver() {
         if (driver == null) {
@@ -24,8 +29,17 @@ public class Driver_Manager {
                 default:
                     throw new IllegalArgumentException("Invalid browser parameters");
             }
+
+            wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         }
         return driver;
+    }
+
+    public static WebDriverWait getWait(){
+        if(wait == null) {
+            getDriver();
+        }
+        return wait;
     }
 
     public static void closeDriver() {
@@ -39,5 +53,8 @@ public class Driver_Manager {
             System.out.println("Error while closing browser");
         }
     }
+
+
+
 }
 
